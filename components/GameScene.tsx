@@ -102,16 +102,16 @@ const GameScene: React.FC<Props> = ({ scene, onChoice, prophetName }) => {
   };
 
   // Fallback Picsum URL (used if AI fails or while loading if we wanted, but we'll show a loader instead)
-  const fallbackImageUrl = `https://picsum.photos/seed/${scene.imagePlaceholder}/800/400`;
+  const fallbackImageUrl = `https://picsum.photos/seed/${scene.imagePlaceholder}/400/600`;
 
   return (
-    <div className="flex flex-col w-full max-w-2xl mx-auto h-full overflow-y-auto pb-20 no-scrollbar">
-      {/* Image Area */}
-      <div className="relative w-full h-48 md:h-64 shrink-0 rounded-b-2xl overflow-hidden shadow-2xl border-b border-gray-700 bg-gray-900">
-        <div className="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
+    <div className="flex flex-col w-full max-w-2xl mx-auto h-full overflow-y-auto pb-20 no-scrollbar items-center">
+      {/* Image Area - Portrait Mode */}
+      <div className="relative w-full max-w-sm aspect-[3/4] mt-4 shrink-0 rounded-2xl overflow-hidden shadow-2xl border border-gray-700 bg-gray-900 mx-4">
+        <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none"></div>
         
         {isLoadingImage ? (
-          <div className="w-full h-full flex flex-col items-center justify-center text-prophet-gold animate-pulse">
+          <div className="w-full h-full flex flex-col items-center justify-center text-prophet-gold animate-pulse bg-gray-800">
              <Loader2 size={32} className="animate-spin mb-2" />
              <span className="text-xs uppercase tracking-widest font-bold">Membentuk Tanah Liat...</span>
           </div>
@@ -123,14 +123,14 @@ const GameScene: React.FC<Props> = ({ scene, onChoice, prophetName }) => {
           />
         )}
 
-        <div className="absolute bottom-2 right-2 z-20 bg-black/60 px-2 py-1 rounded text-xs text-gray-300 flex items-center gap-1">
-          <ImageIcon size={10} />
-          <span>{generatedImage ? 'AI Claymation' : 'Zaman'}: {prophetName}</span>
+        <div className="absolute bottom-3 right-3 z-20 bg-black/60 px-3 py-1.5 rounded-full text-xs text-gray-200 flex items-center gap-1 backdrop-blur-sm border border-white/10">
+          <ImageIcon size={12} />
+          <span>{generatedImage ? 'Visual AI' : 'Zaman'}: {prophetName}</span>
         </div>
       </div>
 
       {/* Content Area */}
-      <div className="p-6 flex flex-col gap-6">
+      <div className="p-6 flex flex-col gap-6 w-full">
         
         {/* Narrative Text */}
         <div className="bg-gray-800/80 p-5 rounded-xl border-l-4 border-prophet-gold shadow-lg backdrop-blur-sm relative">

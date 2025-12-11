@@ -53,6 +53,8 @@ export const generateClaymationImage = async (description: string): Promise<stri
           { 
             text: `Create a Claymation style image. Stop motion animation style, plasticine texture, handmade look, soft cinematic lighting, miniature diorama feel. 
             
+            Composition: Vertical portrait orientation (tall). 
+            
             IMPORTANT RELIGIOUS GUIDELINE: If the scene description mentions 'Prophet', 'Nabi', or 'Muhammad', NEVER depict him as a human person with a face or body. Instead, visualize him as a glowing, radiant golden light or aura (sosok cahaya) to respect Islamic aniconism.
             
             Scene: ${description}` 
